@@ -1,0 +1,10 @@
+{
+  "description": "Showcases a curated graphic design portfolio with year-based archives and category filters, highlighting artwork in a clean, responsive editorial layout.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

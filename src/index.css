@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f5f3ed;
+  font-family: "DM Sans", sans-serif;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.image-wrap {
+  position: relative;
+}
+
+.page-container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.header-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.featured-grid,
+.archive-heading {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.featured-card {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+
+.archive-heading-title {
+  grid-column: 1 / -1;
+}
+
+.filter-nav {
+  grid-column: 1 / -1;
+  scrollbar-width: none;
+}
+
+.filter-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.work-card {
+  margin-bottom: 32px;
+}
+
+.work-card-button {
+  min-height: 44px;
+}
+
+.project-preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: 8px;
+  padding: 16px;
+}
+
+.project-preview-1 {
+  grid-template-columns: 1fr;
+  padding: 0;
+}
+
+.project-preview-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-preview-item {
+  min-width: 0;
+}
+
+.project-preview-item img {
+  object-fit: contain;
+}
+
+.modal-panel {
+  animation: modal-in 350ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .page-container {
+    padding-inline: 32px;
+  }
+
+  .header-layout {
+    display: grid;
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    column-gap: 20px;
+    align-items: start;
+  }
+
+  .header-layout > :first-child {
+    grid-column: span 3;
+  }
+
+  .header-layout > :nth-child(2) {
+    grid-column: span 3;
+  }
+
+  .header-layout > :last-child {
+    grid-column: span 2;
+  }
+
+  .featured-grid,
+  .archive-heading {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
+    gap: 20px;
+  }
+
+  .featured-card-1 {
+    grid-column: span 3;
+  }
+
+  .featured-card-2 {
+    grid-column: span 5;
+  }
+
+  .featured-card-3 {
+    grid-column: 6 / span 3;
+  }
+
+  .archive-heading-title {
+    grid-column: span 3;
+  }
+
+  .filter-nav {
+    grid-column: span 5;
+  }
+
+  .archive-grid {
+    column-count: 2;
+    column-gap: 20px;
+  }
+
+  .work-card {
+    margin-bottom: 36px;
+  }
+
+  .modal-panel {
+    animation-name: panel-in;
+  }
+
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateX(2rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .page-container {
+    max-width: 1200px;
+    padding-inline: 48px;
+  }
+
+  .header-layout,
+  .featured-grid,
+  .archive-heading {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: 24px;
+  }
+
+  .featured-grid {
+    row-gap: 24px;
+  }
+
+  .header-layout > :first-child {
+    grid-column: span 5;
+  }
+
+  .header-layout > :nth-child(2) {
+    grid-column: span 4;
+  }
+
+  .header-layout > :last-child {
+    grid-column: span 3;
+  }
+
+  .featured-card-1 {
+    grid-column: span 5;
+  }
+
+  .featured-card-2 {
+    grid-column: span 7;
+  }
+
+  .featured-card-3 {
+    grid-column: 9 / span 4;
+    margin-top: -9rem;
+  }
+
+  .archive-heading-title {
+    grid-column: span 5;
+  }
+
+  .filter-nav {
+    grid-column: span 7;
+  }
+
+  .archive-grid {
+    column-count: 3;
+    column-gap: 24px;
+  }
+
+  .work-card {
+    margin-bottom: 40px;
+  }
+}
+
+@media (hover: none) {
+  .view-label {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
