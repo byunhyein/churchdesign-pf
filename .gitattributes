@@ -149,3 +149,4 @@
 # Keep assets consumed by the site as regular Git blobs so production receives the image bytes.
 src/imports/web/**    -filter -diff -merge -text
 public/assets/web/** -filter -diff -merge -text
+public/favicon.png   -filter -diff -merge -text
